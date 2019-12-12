@@ -1,0 +1,72 @@
+table
+{
+	width: 100%;
+	border-spacing: 0;
+	border: solid 1px black;
+}
+
+.descCol th
+{
+	border: solid 1px black;
+}
+
+table tr th
+{
+	background-color: grey;
+	border: 0;
+	padding: 0;
+	text-align: center;
+}
+
+table tr td
+{
+	border: solid 1px grey;
+	padding: 0;
+	text-align: center;
+}
+
+tr
+{
+	height: 25px;
+}
+
+tr:nth-child(even)
+{
+	background-color: #ebebeb;
+}
+
+tr:nth-child(odd)
+{
+	background-color: #bfbfbf;
+}
+
+tr:hover
+{
+	background-color: #a8a8a8;
+	content: "test";
+}
+
+.titre
+{
+	width: 60%;
+}
+
+.genre
+{
+	width: 15%;
+}
+
+.annee
+{
+	width: 15%;
+}
+
+.duree
+{
+	width: 10%;
+}
+
+abbr
+{
+	text-decoration: none;
+}

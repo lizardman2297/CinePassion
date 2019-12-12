@@ -1,0 +1,22 @@
+table
+{
+	width: 100%;
+}
+
+table tr th
+{
+	background-color: grey;
+	border: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.pair
+{
+	background-color: #F9F9F9;
+}
+
+.impair
+{
+	background-color: #C0C0C0;
+}

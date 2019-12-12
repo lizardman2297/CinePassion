@@ -1,0 +1,13 @@
+.btNav{
+	margin:0 10px 0 10px; 
+}
+
+.btNav:hover{
+	background-color: #a8a8a8;
+	font-weight: bold;
+}
+
+.sectionCourante{
+	font-weight: bold;
+	font-size: 20px;
+}
