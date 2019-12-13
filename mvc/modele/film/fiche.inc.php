@@ -14,10 +14,11 @@ class modeleFilmFiche extends modeleFilm {
     
     public function getInfoFilm($numFilm) {
         $req = "SELECT numFilm, titreFilm,TIME_FORMAT(dureeFilm, '%H') AS dureeHeures, TIME_FORMAT(dureeFilm, '%i') AS dureeMinutes, 
-                DAY(dateSortieFilm) AS jour, MONTH(dateSortieFilm) AS mois, YEAR(dateSortieFilm) AS annee, libelleGenre AS genre, prenomPersonne AS prenomRealisateur, nomPersonne AS nomRealisateur, 
-                synopsisFilm AS synopsis, 
+                DAY(dateSortieFilm) AS jour, MONTH(dateSortieFilm) AS mois, YEAR(dateSortieFilm) AS annee, libelleGenre AS genre, 
+                prenomPersonne AS prenomRealisateur, nomPersonne AS nomRealisateur, synopsisFilm AS synopsis, 
                 p1.libellePays AS pays,
-                p2.libellePays AS paysReal
+                p2.libellePays AS paysReal,
+                p1.nationalitéM, p1.nationalitéF, sexePersonne
                 FROM film 
                 INNER JOIN genre
                 ON film.numGenreFilm = genre.numGenre

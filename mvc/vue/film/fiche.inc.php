@@ -5,7 +5,7 @@
  date de modification	:
  rôle					: permet de générer le code html de la partie centrale de la page fiche du module film
  ================================================================================================================= -->
-<div id='content1'> 
+ <div id='content1'> 
 
 
 </div><!-- content1 -->
@@ -27,8 +27,26 @@
         		<?php echo $galerieImageFilm;?>
         	</div>
         	<div id="information">
-        		<?php echo $leFilm->titreFilm?> est le <?php echo $positionFilm?> dans notre cinémathèque du realisateur "pays nom prenom" ... .C'est un "type film"
-        		d'une durée de "nbHeure" heure et "nbMin" minutes qui est sorti dans les salles de cinema en France le "dateSortieCine".
+        		<?php echo $leFilm->titreFilm?> est le <?php echo $positionFilm?> dans notre cinémathèque <?php echo $nationaliteReal?>
+        		 <?php echo $leFilm->prenomRealisateur . " " . $leFilm->nomRealisateur ;?>. C'est <?php echo $typeFilm;?>
+        		d'une durée de <?php echo $dureeHeures;?> heure et <?php echo $leFilm->dureeMinutes;?> minutes qui est sorti dans les salles de cinema 
+        		en France le <?php echo $dateSortieFilm;?>.
+        	</div>
+        	
+        	<div id="histoire">
+				histoire
+        	</div>
+        	
+        	<div id="acteur">
+				acteur
+        	</div>
+        	
+        	<div id="notation">
+				notation
+        	</div>
+        	
+        	<div id="commentaire">
+				commentaire
         	</div>
 		
 		</div>
