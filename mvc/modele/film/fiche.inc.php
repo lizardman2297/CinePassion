@@ -12,6 +12,13 @@ class modeleFilmFiche extends modeleFilm {
         return $titre->titreFilm;
     }
     
+    /**
+     * getInfoFilm
+     *
+     * @param  mixed $numFilm
+     *
+     * @return void
+     */
     public function getInfoFilm($numFilm) {
         $req = "SELECT numFilm, titreFilm,TIME_FORMAT(dureeFilm, '%H') AS dureeHeures, TIME_FORMAT(dureeFilm, '%i') AS dureeMinutes, 
                 DAY(dateSortieFilm) AS jour, MONTH(dateSortieFilm) AS mois, YEAR(dateSortieFilm) AS annee, libelleGenre AS genre, 
@@ -36,6 +43,13 @@ class modeleFilmFiche extends modeleFilm {
         return $infoFilm;
     }
     
+    /**
+     * getPositionFilm
+     *
+     * @param  mixed $nomFilm
+     *
+     * @return void
+     */
     public function getPositionFilm($nomFilm) {
         $position = "";
         $req = "SELECT COUNT(titreFilm) AS position

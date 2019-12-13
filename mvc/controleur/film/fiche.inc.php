@@ -37,7 +37,6 @@ class controleurFilmFiche extends controleur {
         $this->titreMain = "La description de : " . $this->titreFilmCourant;
         
         
-        
         // ===============================================================================================================
         // encarts
         // ===============================================================================================================
@@ -79,6 +78,13 @@ class controleurFilmFiche extends controleur {
         parent::genererVue();
     }
     
+    /**
+     * getGalerieImageImage
+     *
+     * @param  mixed $titreFilm
+     *
+     * @return void
+     */
     private function getGalerieImageImage($titreFilm) {
         $dirImage = scandir("./image/film/photo/" . $titreFilm);
         $tabImage = array();
@@ -97,6 +103,13 @@ class controleurFilmFiche extends controleur {
         return $image;
     }
     
+    /**
+     * getNationaliteReal
+     *
+     * @param  mixed $unFilm
+     *
+     * @return void
+     */
     private function getNationaliteReal($unFilm) {
         if ($unFilm->sexePersonne == "M") {
             return "du realisateur "  . lcfirst($unFilm->nationalitéM);
@@ -104,7 +117,27 @@ class controleurFilmFiche extends controleur {
             return "de la realisatrice "  . lcfirst($unFilm->nationalitéF);
         }
     }
+
+    /**
+     * getNationaliteFilm
+     *
+     * @param  mixed $unFilm
+     *
+     * @return void
+     */
+    private function getNationaliteFilm($unFilm){
+        if ($unFilm->) {
+            # code...
+        }
+    }
     
+    /**
+     * getTypeFilm
+     *
+     * @param  mixed $unFilm
+     *
+     * @return void
+     */
     private function getTypeFilm($unFilm){
         switch ($unFilm->genre) {
             case "action":
@@ -138,7 +171,7 @@ class controleurFilmFiche extends controleur {
                 $type = "un film de guerre";
             break;
             case "peplum":
-                ;
+                $type = "un peplum";
             break;
             case "policier":
                 $type = "un film policier";
@@ -160,12 +193,26 @@ class controleurFilmFiche extends controleur {
         return $type;
     }
     
+    /**
+     * formatageHeure
+     *
+     * @param  mixed $dureeHeure
+     *
+     * @return void
+     */
     private function formatageHeure($dureeHeure){
         if ($dureeHeure < 10) {
             return substr($dureeHeure, 1);
         }
     }
     
+    /**
+     * getDateSortie
+     *
+     * @param  mixed $unFilm
+     *
+     * @return void
+     */
     private function getDateSortie($unFilm){
         switch ($unFilm->mois) {
             case 1:
