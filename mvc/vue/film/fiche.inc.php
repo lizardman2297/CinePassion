@@ -26,26 +26,26 @@
     		<div id="galerie">
         		<?php echo $galerieImageFilm;?>
         	</div>
-        	<div id="information">
+        	<div id="information" class="ongletActif">
         		<?php echo $leFilm->titreFilm?> est le <?php echo $positionFilm?> dans notre cinémathèque <?php echo $nationaliteReal?>
         		 <?php echo $leFilm->prenomRealisateur . " " . $leFilm->nomRealisateur ;?>. C'est <?php echo $typeFilm;?>
         		d'une durée de <?php echo $dureeHeures;?> heure et <?php echo $leFilm->dureeMinutes;?> minutes qui est sorti dans les salles de cinema 
         		en France le <?php echo $dateSortieFilm;?>.
         	</div>
         	
-        	<div id="histoire">
+        	<div id="histoire" class="ongletNonActif">
 				histoire
         	</div>
         	
-        	<div id="acteur">
+        	<div id="acteur" class="ongletNonActif">
 				acteur
         	</div>
         	
-        	<div id="notation">
+        	<div id="notation" class="ongletNonActif">
 				notation
         	</div>
         	
-        	<div id="commentaire">
+        	<div id="commentaire" class="ongletNonActif">
 				commentaire
         	</div>
 		
