@@ -75,7 +75,7 @@ class controleurFilmFiche extends controleur {
         $this->typeFilm = $this->getTypeFilm($this->leFilm);
         $this->dureeHeures = $this->formatageHeure($this->leFilm->dureeHeures);
         $this->dateSortieFilm = $this->getDateSortie($this->leFilm);
-        $this->acteur = $this->modelFilm->getActeurByFilm($this->leFilm->numFilm);
+        // $this->acteur = $this->modelFilm->getActeurByFilm($this->leFilm->numFilm);
         parent::genererVue();
     }
     
@@ -273,7 +273,7 @@ class controleurFilmFiche extends controleur {
     }
 
     public function getActeur($numFilm) {
-        
+
     }
         
 }
