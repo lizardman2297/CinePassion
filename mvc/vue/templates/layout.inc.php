@@ -124,6 +124,7 @@
 				<ul class='nv2'>
 					<li><a href='./index.php?module=film&amp;page=accueil'>Accueil</a></li>
 					<li><a href='./index.php?module=film&amp;page=liste'>Liste</a></li>
+					<li><a href='./index.php?module=film&amp;page=statistique'>Statistique</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -165,7 +166,12 @@
 			</ul>
 		</div>
 		<div class='blocGauche'>
-			<span class='centrer'>...</span>
+			les films
+			<ul>
+				<li><a href='./index.php?module=film&amp;page=accueil'>accueil</a></li>
+				<li><a href='./index.php?module=film&amp;page=liste'>nos partenaires</a></li>
+				<li><a href='./index.php?module=film&amp;page=statistique'>plan</a></li>
+			</ul>
 		</div>
 		<div class='blocDroite'>
 			<span class='centrer'>...</span>

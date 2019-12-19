@@ -9,6 +9,26 @@ function switchClass(event){
 	item.classList.add("itemActif");
 	blockSuivant.classList.remove("ongletNonActif")
 	blockSuivant.classList.add("ongletActif");
-	console.log(oldActif.item(0).innerHTML.toLowerCase());
-	
+}
+
+function switchClassStat(event) {
+	var item = event.target; // item clicker
+
+	var actifCourant = document.getElementsByClassName("itemActif");
+	var oldBlock = document.getElementsByClassName("ongletNonActif");
+	var currentBlock = document.getElementsByClassName("ongletActif");
+
+
+
+
+	oldBlock.item(0).classList.add("ongletActif");
+	oldBlock.item(0).classList.remove("ongletNonActif");
+
+	currentBlock.item(0).classList.add("ongletNonActif");
+	currentBlock.item(0).classList.remove("ongletActif");
+
+
+	actifCourant.item(0).classList.remove("itemActif");
+	item.classList.add("itemActif");
+
 }
