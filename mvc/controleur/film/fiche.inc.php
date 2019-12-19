@@ -75,6 +75,7 @@ class controleurFilmFiche extends controleur {
         $this->typeFilm = $this->getTypeFilm($this->leFilm);
         $this->dureeHeures = $this->formatageHeure($this->leFilm->dureeHeures);
         $this->dateSortieFilm = $this->getDateSortie($this->leFilm);
+        $this->acteur = $this->modelFilm->getActeurByFilm($this->leFilm->numFilm);
         parent::genererVue();
     }
     
@@ -86,20 +87,26 @@ class controleurFilmFiche extends controleur {
      * @return void
      */
     private function getGalerieImageImage($titreFilm) {
-        $dirImage = scandir("./image/film/photo/" . $titreFilm);
-        $tabImage = array();
-        foreach ($dirImage as $element) {
-            if ($element == "." || $element == ".." || pathinfo($element, PATHINFO_EXTENSION) == "db") {
-                //                 on en fait rien 
-            }elseif(pathinfo($element, PATHINFO_EXTENSION) == "jpg"){
-                $tabImage[] = $element;
+        if (file_exists("./image/film/photo/" . $titreFilm)) {
+            $dirImage = scandir("./image/film/photo/" . $titreFilm);
+            $tabImage = array();
+            foreach ($dirImage as $element) {
+                if ($element == "." || $element == ".." || pathinfo($element, PATHINFO_EXTENSION) == "db") {
+                    //                 on en fait rien 
+                }elseif(pathinfo($element, PATHINFO_EXTENSION) == "jpg"){
+                    $tabImage[] = $element;
+                }
+                
             }
-            
+            $image = "<a href='./image/film/photo/$titreFilm/$tabImage[0]' rel='lightbox[film]'><img alt='affiche' src='./image/film/affiche/$titreFilm.jpg' class='imageFilm'></a>";
+            for ($i = 1; $i < count($tabImage); $i++) {
+                $image .= "<a href='./image/film/photo/$titreFilm/$tabImage[$i]' rel='lightbox[film]'></a>";
+            }
+        }else {
+            $image = "<img src='./image/film/affiche/$titreFilm.jpg' alt='affiche du film'>";
         }
-        $image = "<a href='./image/film/photo/$titreFilm/$tabImage[0]' rel='lightbox[film]'><img alt='affiche' src='./image/film/affiche/$titreFilm.jpg' class='imageFilm'></a>";
-        for ($i = 1; $i < count($tabImage); $i++) {
-            $image .= "<a href='./image/film/photo/$titreFilm/$tabImage[$i]' rel='lightbox[film]'></a>";
-        }
+        
+        
         return $image;
     }
     
@@ -125,11 +132,17 @@ class controleurFilmFiche extends controleur {
      *
      * @return void
      */
-    private function getNationaliteFilm($unFilm){
-        if ($unFilm->) {
-            # code...
-        }
-    }
+    // private function getNationaliteFilm($unFilm){
+    //     switch ($unFilm->pays) {
+    //         case 'value':
+    //             # code...
+    //             break;
+            
+    //         default:
+    //             # code...
+    //             break;
+    //     }
+    // }
     
     /**
      * getTypeFilm
@@ -257,6 +270,10 @@ class controleurFilmFiche extends controleur {
         }
         
         return $unFilm->jour . " " . $mois . $unFilm->annee;
+    }
+
+    public function getActeur($numFilm) {
+        
     }
         
 }

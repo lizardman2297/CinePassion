@@ -70,6 +70,20 @@ class modeleFilmFiche extends modeleFilm {
         }
         return $position;
     }
+
+    public function getActeurByFilm($numFilm) {
+        $req = "SELECT role, prenomPersonne AS prenom, nomPersonne AS nom, getAge(personne.dateNaissancePersonne) AS age
+                FROM participer 
+                INNER JOIN personne
+                ON participer.numActeur = personne.numPersonne
+                WHERE numFilm = $numFilm";
+        $reqActeur = $this->executerRequete($req);
+        while ($unActeur = $reqActeur->fetchObject()) {
+            $acteur[] = $unActeur;
+        }
+        var_dump($acteur);
+        return $acteur;
+    }
     
    
 }

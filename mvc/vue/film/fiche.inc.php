@@ -34,7 +34,9 @@
         	</div>
         	
         	<div id="histoire" class="ongletNonActif">
-				histoire
+				<?php
+					echo $leFilm->synopsis;
+				?>
         	</div>
         	
         	<div id="acteur" class="ongletNonActif">
@@ -42,11 +44,11 @@
         	</div>
         	
         	<div id="notation" class="ongletNonActif">
-				notation
+				<img src="./image/divers/enTravaux.png" alt="workInProgress">
         	</div>
         	
         	<div id="commentaire" class="ongletNonActif">
-				commentaire
+				<img src="./image/divers/enTravaux.png" alt="workInProgress">
         	</div>
 		
 		</div>
