@@ -86,11 +86,11 @@ class modeleFilmFiche extends modeleFilm {
         return $acteur;
     }
 
-    private function getNbActeurs($numFilm) {
-        $req = "SELECT COUNT(*) as nb FROM personne INNER JOIN participer ON participer.numActeur = personne.numPersonne WHERE numFilm = $numFilm";
-        $reqNb = $this->executerRequete($req);
-        $return $reqNb->fetchObject();
-    }
+    // private function getNbActeurs($numFilm) {
+    //     $req = "SELECT COUNT(*) as nb FROM personne INNER JOIN participer ON participer.numActeur = personne.numPersonne WHERE numFilm = $numFilm";
+    //     $reqNb = $this->executerRequete($req);
+    //     $return $reqNb->fetchObject();
+    // }
     
    
 }
