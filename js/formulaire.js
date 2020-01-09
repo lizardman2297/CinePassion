@@ -1,6 +1,8 @@
 function validationFormSub(){
-    if (document.getElementById("login").value == "") {
+    if (document.getElementById("login").value == "" || document.getElementById("password").value == "") {
         alert("tout les champs doivent etre renseigner");
+        document.getElementById("login").value = "";
+        document.getElementById("password").value = "";
         document.getElementById("login").focus();
     }
 }
