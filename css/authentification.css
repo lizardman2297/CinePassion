@@ -1,0 +1,25 @@
+label{
+    float: left;
+    display: block;
+    width: 107px;
+}
+
+input[type="text"], input[type="password"]{
+    margin: 0 0 10px 0;
+}
+
+input[type="button"]{
+    margin-left: 107px;
+    padding: 3px;
+    border: 0;
+    border-radius: 5px;
+    transition-property: all;
+    transition-duration: 300ms;
+}
+
+input[type="button"]:hover{
+    background-color: rgb(56, 56, 56);
+    color: #fff;
+    transition-property: all;
+    transition-duration: 300ms;
+}

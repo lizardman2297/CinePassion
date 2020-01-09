@@ -15,6 +15,9 @@
 	</title>
 	<link rel='stylesheet' type='text/css' href='./css/structure.css' />
 	<link rel='stylesheet' type='text/css' href='./css/menu.css' />
+	<link rel='stylesheet' type='text/css' href='./css/authentification.css' />
+	<link rel="icon" type="image/png" href="./framework/image/divers/bobine.png">
+	<script src="./js/formulaire"></script>
 	<script type='text/javascript' src='./librairie/jquery/jquery1.7.2.js'></script>
 	<?php 
 		if (isset($texteDefilant)) {
@@ -79,7 +82,23 @@
 		<img alt='' id='fondHeader' src='./image/divers/fondHeader.jpg' />
 		<img alt='' src='./image/divers/cinepassion38Logo.png' id='cinepassion38' />
 		<div id='authentification'>
-			<?php echo $authentification . PHP_EOL; ?>
+			<?php
+				if (isset($_SESSION["compte"])) {
+					echo "futre avatar";
+				}else {
+			?>
+			<form action="#" method="post">
+				<label for="login">Login :</label>
+				<input type="text" name="login" id="login" placeholder="entrer votre login..."></br>
+				<label for="password">Mot de passe :</label>
+				<input type="password" name="password" id="password">
+				<input type="button" value="s'authentifier" onclick="validationFormSub()">
+			</form>
+			<?php
+				}
+			?>
+			
+
 		</div>
 		<div id='titre'>
 			<?php echo $titreHeader . PHP_EOL; ?>
@@ -125,6 +144,11 @@
 					<li><a href='./index.php?module=film&amp;page=accueil'>Accueil</a></li>
 					<li><a href='./index.php?module=film&amp;page=liste'>Liste</a></li>
 					<li><a href='./index.php?module=film&amp;page=statistique'>Statistique</a></li>
+				</ul>
+			</li>
+			<li class='plus'>Utilisateur
+				<ul class='nv2'>
+					<li><a href='./index.php?module=user&amp;page=accueil'>Accueil</a></li>
 				</ul>
 			</li>
 		</ul>
