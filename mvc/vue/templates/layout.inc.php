@@ -89,11 +89,12 @@
 			?>
 			<form action="#" method="post">
 				<label for="login">Login :</label>
-				<input type="text" name="login" id="login" placeholder="entrer votre login..."></br>
+				<input type="text" name="login" id="login" placeholder="entrer votre login..." onkeypress="return controlSaisie()"></br>
 				<label for="password">Mot de passe :</label>
 				<input type="password" name="password" id="password">
 				<input type="button" value="s'authentifier" onclick="validationFormSub()">
 			</form>
+			<span id="badChar"></span>
 			<?php
 				}
 			?>
