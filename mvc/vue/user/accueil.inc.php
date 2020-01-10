@@ -13,7 +13,7 @@
     <div id="textUser">
         Ce site propose certaines fonctionnalités qui ne sont accessibles qu'aux personnes ayant un compte. 3 niveaux de compte sont proposés.
         <h3>Le compte visiteur</h3> 
-        Le compte visiteur est accessible à tout le monde. La création d'un compte s'effectue très facilement à partir du <a href="#" class="info">formulaire d'inscription</a>. Une fois inscrites, 
+        Le compte visiteur est accessible à tout le monde. La création d'un compte s'effectue très facilement à partir du <a href="./index.php?module=user&page=inscription" class="info">formulaire d'inscription</a>. Une fois inscrites, 
         les personnes ayant un compte visiteur ont la possibilité de visualiser les films proposés à nos membres. Les personnes ayant un compte visiteur ont aussi la 
         possibilité de gérer leur compte : modification des informations personnelles, modification du mot de passe, choix de l'avatar, ... Par contre, elles n'ont pas 
         la possibilité d'évaluer et de commenter les films proposés par notre cinémathèque, ces fonctionnalités étant réservées aux membres de notre association.

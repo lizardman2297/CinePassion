@@ -4,7 +4,7 @@ label{
     width: 107px;
 }
 
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="password"], input[type="phone"], input[type="mail"], input[type="number"], input[type="date"], select{
     margin: 0 0 10px 0;
 }
 
@@ -28,3 +28,10 @@ input[type="button"]:hover{
     position: relative;
     right: 70%;
 }
+
+#formInscription label{
+    float: left;
+    display: block;
+    width: 135px;
+}
+
