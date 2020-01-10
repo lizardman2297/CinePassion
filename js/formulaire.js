@@ -17,8 +17,9 @@ function controlSaisie(){
 	}else if (window.event.which == 45 || window.event.which == 46 || window.event.which == 95) { // - .  _ 
         return true;
     }else{
-        document.getElementById("badChar").innerHTML = "Charactere non autoriser";
-        setTimeout("document.getElementById('badChar').innerHTML = ''", 500)
+        char = String.fromCharCode(window.event.which);
+        document.getElementById("badChar").innerHTML = "Charactere " + char + " non autorisé";
+        setTimeout("document.getElementById('badChar').innerHTML = ''", 700);
         return false;
     }
 }

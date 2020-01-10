@@ -67,6 +67,8 @@
 	</div>
 	
 	<div id='lien'>
+		<img id="cadenas" src="./framework/image/divers/cadenasOn.png" alt="cadenas">
+
 		<a onclick='window.open(this.href); return false;' href='http://www.allocine.fr'>
 			<img alt='allocine' src='./image/partenaire/logoAllocineMini.png' />
 		</a>&nbsp;&nbsp;

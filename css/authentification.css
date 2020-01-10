@@ -23,3 +23,8 @@ input[type="button"]:hover{
     transition-property: all;
     transition-duration: 300ms;
 }
+
+#cadenas{
+    position: relative;
+    right: 70%;
+}
