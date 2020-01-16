@@ -6,6 +6,7 @@ function validationFormSub(){
         document.getElementById("badChar").innerHTML = "Le mot de passe doit etre renseigner";
         setTimeout("document.getElementById('badChar').innerHTML = ''", 700);
     }else{
+        verifierAuthentificationUser();
         document.getElementById("formCo").submit();
     }
 }
