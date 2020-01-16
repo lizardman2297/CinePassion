@@ -84,24 +84,7 @@
 		<img alt='' id='fondHeader' src='./image/divers/fondHeader.jpg' />
 		<img alt='' src='./image/divers/cinepassion38Logo.png' id='cinepassion38' />
 		<div id='authentification'>
-			<?php
-				if (isset($_SESSION["compte"])) {
-					echo "futre avatar";
-				}else {
-			?>
-			<form id="formCo" action="fghdsk" method="post">
-				<label for="login">Login :</label>
-				<input type="text" name="login" id="login" placeholder="entrer votre login..." onkeypress="return controlSaisie()"></br>
-				<label for="password">Mot de passe :</label>
-				<input type="password" name="password" id="password">
-				<input type="button" value="s'authentifier" onclick="validationFormSub()">
-			</form>
-			<span id="badChar"></span>
-			<?php
-				}
-			?>
-			
-
+			<?php echo $authentification . PHP_EOL; ?>
 		</div>
 		<div id='titre'>
 			<?php echo $titreHeader . PHP_EOL; ?>

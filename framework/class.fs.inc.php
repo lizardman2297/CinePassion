@@ -25,24 +25,35 @@ class fs {
 	 * @version 1.1
 	 * @copyright Christophe Goidin - juin 2017
 	 */
-	public static function getContenuFichier($fichier, $id) {
+	public static function getContenuFichier($fichier, $id = NULL) {
 		try {
-			if (($refFichier = fopen($fichier, "r")) !== false) {
-				while (!feof($refFichier)) {
-					$ligne = preg_replace("/(\r\n|\n|\r|\t)/", "", fgets($refFichier));
-					if (($ligne == "<div id='$id'>") || ($ligne == "<div id=\"$id\">")) {
-						$res = $ligne . "\r\n";
-						while (($ligne = preg_replace("/(\r\n|\n|\r|\t)/", "", fgets($refFichier))) != "</div><!-- $id -->") {
-							$res .= $ligne  . "\r\n";
-						}
-						$res .= $ligne  . "\r\n";	// \r\n est le symbole de fin de ligne sous windows
-						break;
-					}
+			if (is_null($id)) {
+				if (is_file($fichier)) {
+					ob_start();
+					include $fichier;
+					return ob_get_clean();
+				}else {
+					return false;
 				}
-				fclose($refFichier);
-				return (!isset($res) ? "" : $res);
 			}else {
-				throw new Exception();
+				
+				if (($refFichier = fopen($fichier, "r")) !== false) {
+					while (!feof($refFichier)) {
+						$ligne = preg_replace("/(\r\n|\n|\r|\t)/", "", fgets($refFichier));
+						if (($ligne == "<div id='$id'>") || ($ligne == "<div id=\"$id\">")) {
+							$res = $ligne . "\r\n";
+							while (($ligne = preg_replace("/(\r\n|\n|\r|\t)/", "", fgets($refFichier))) != "</div><!-- $id -->") {
+								$res .= $ligne  . "\r\n";
+							}
+							$res .= $ligne  . "\r\n";	// \r\n est le symbole de fin de ligne sous windows
+							break;
+						}
+					}
+					fclose($refFichier);
+					return (!isset($res) ? "" : $res);
+				}else {
+					throw new Exception();
+				}
 			}
 		}catch (Exception $e) {
 			throw new Exception("[fichier] : " . __FILE__ . "<br/>[classe] : " . __CLASS__ . "<br/>[méthode] : " . __METHOD__ . "<br/>[message] : Impossible de lire le contenu du fichier '$fichier'.");
