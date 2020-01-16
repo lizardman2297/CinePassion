@@ -17,8 +17,12 @@
 	<link rel='stylesheet' type='text/css' href='./css/menu.css' />
 	<link rel='stylesheet' type='text/css' href='./css/authentification.css' />
 	<link rel="icon" type="image/png" href="./framework/image/divers/bobine.png">
-	<script src="./js/formulaire.js"></script>
 	<script type='text/javascript' src='./librairie/jquery/jquery1.7.2.js'></script>
+	<script type='text/javascript' src='./librairie/jsencrypt/jsencrypt.js'></script>
+
+
+	<script src="./js/formulaire.js"></script>
+
 	<?php 
 		if (isset($texteDefilant)) {
 			echo "<link rel='stylesheet' type='text/css' href='./librairie/liscroll/css/liscroll.css' />

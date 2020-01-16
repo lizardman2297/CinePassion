@@ -1,5 +1,14 @@
 
+<?php
 
+    if (isset($_SESSION["compte"])) {
+        echo "oui";
+    }else {
+    
+        echo "non";
+    }
+
+?>
 <form id="formCo" action="fghdsk" method="post">
     <label for="login">Login :</label>
     <input type="text" name="login" id="login" placeholder="entrer votre login..." onkeypress="return controlSaisie()"></br>
