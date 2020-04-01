@@ -6,9 +6,13 @@
     }else {
     
         echo "non";
+        echo "<script type='text/javascript'>";
+            echo "var publicKeyRsa = 'gfdgfdgfdgfd'";
+        echo "</script>";
     }
 
 ?>
+
 <form id="formCo" action="fghdsk" method="post">
     <label for="login">Login :</label>
     <input type="text" name="login" id="login" placeholder="entrer votre login..." onkeypress="return controlSaisie()"></br>

@@ -194,7 +194,10 @@
 			<span class='centrer'>...</span>
 		</div>
 		<div class='blocCentre'>			
-			<span class='centrer'>...</span>
+			Utilisateur
+			<ul>
+				<li><a href='./index.php?module=user&amp;page=accueil'>accueil</a></li>
+			</ul>
 		</div>	
 		<hr/>
 	</div><!-- planSite -->
