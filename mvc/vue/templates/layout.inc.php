@@ -13,6 +13,18 @@
 	<title>
 		<?php echo $titreSiteWeb . PHP_EOL; ?>
 	</title>
+	<?php
+		if (!isset($_SESSION["compte"])) {
+			?>
+			<script type='text/javascript'>
+			//-----BEGIN PUBLIC KEY-----									
+				var publicKeyRsa = "MCwwDQYJKoZIhvcNAQEBBQADGwAwGAIRANQSV0QfeHuhjPe9gPRSeE0CAwEAAQ==";
+			//-----END PUBLIC KEY-----
+			</script>
+
+			<?php
+		}
+	?>
 	<link rel='stylesheet' type='text/css' href='./css/structure.css' />
 	<link rel='stylesheet' type='text/css' href='./css/menu.css' />
 	<link rel='stylesheet' type='text/css' href='./css/authentification.css' />
@@ -31,6 +43,8 @@
 		if (isset($enteteLien)) {
 			echo $enteteLien . PHP_EOL;
 		}
+
+
 	?>
 </head>
 <body>

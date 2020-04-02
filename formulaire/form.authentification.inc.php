@@ -6,9 +6,7 @@
     }else {
     
         echo "non";
-        echo "<script type='text/javascript'>";
-            echo "var publicKeyRsa = 'gfdgfdgfdgfd'";
-        echo "</script>";
+        
     }
 
 ?>
