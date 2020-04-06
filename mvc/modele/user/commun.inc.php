@@ -4,7 +4,7 @@
  * @version 1.0
  * @copyright Fariello Loris - Janvier 2020
  */
-class modeleUser {
+class modeleUser extends modele {
     
 }
 ?>
