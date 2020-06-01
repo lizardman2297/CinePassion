@@ -17,9 +17,9 @@
 		if (!isset($_SESSION["compte"])) {
 			?>
 			<script type='text/javascript'>
-			//-----BEGIN PUBLIC KEY-----									
+			// -----BEGIN PUBLIC KEY-----									
 				var publicKeyRsa = "MCwwDQYJKoZIhvcNAQEBBQADGwAwGAIRANQSV0QfeHuhjPe9gPRSeE0CAwEAAQ==";
-			//-----END PUBLIC KEY-----
+			// -----END PUBLIC KEY-----
 			</script>
 
 			<?php

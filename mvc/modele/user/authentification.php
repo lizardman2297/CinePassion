@@ -19,7 +19,11 @@ class modeleUserAuthentification extends modeleUser{
     * booléen false lorsqu'il n'y a plus de tuples à lire)
     */
     public function getInformationsUser($loginUser, $motDePasseUser){
-        
+        $mdpCrypt = $this->modeleUser->encrypte($motDePasseUser);
+
+        $user = new stdClass();
+        $user->mdp = $mdpCrypt;
+        $user->login;
     }
     
 }
