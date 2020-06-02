@@ -462,7 +462,7 @@ class Crypt_RSA {
     function Crypt_RSA()
     {
         if (!class_exists('Math_BigInteger')) {
-            require_once('Math/BigInteger.php');
+            require_once('BigInteger.php');
         }
 
         $this->configFile = CRYPT_RSA_OPENSSL_CONFIG;

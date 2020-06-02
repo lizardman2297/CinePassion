@@ -256,7 +256,11 @@ abstract class controleur {
 	 * @copyright Christophe Goidin - juin 2017
 	 */
 	private function getAuthentification() {
-		return fs::getContenuFichier("./formulaire/form.authentification.inc.php");
+		if (isset($_SESSION["compte"])) {
+			echo "oui";
+		}else {
+			return fs::getContenuFichier("./formulaire/form.authentification.inc.php");
+		}
 	}
 	
 	/**

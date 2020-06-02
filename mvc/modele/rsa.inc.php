@@ -11,7 +11,7 @@ class modeleRsa extends modele{
      * @return string : la clé publique du couple de clé RSA dont le numéro est passé en paramètre
      */
     public function getPublicKeyRsa($num){
-        $req = "SELECT publicKeyRsa FROM rsa WHERE = ?";
+        $req = "SELECT publicKeyRsa FROM rsa WHERE numKeyRsa = ?";
         $pdo = $this->executerRequete($req, $num);
         return $result = $pdo->fetchObject();
     }
@@ -22,7 +22,7 @@ class modeleRsa extends modele{
      * @return string : la clé privée du couple de clé RSA dont le numéro est passé en paramètre 
      */
     public function getPrivateKeyRsa($num){
-        $req = "SELECT privateKeyRsa FROM rsa WHERE = ?";
+        $req = "SELECT privateKeyRsa FROM rsa WHERE numKeyRsa = ?";
         $pdo = $this->executerRequete($req, $num);
         return $result = $pdo->fetchObject();
     }

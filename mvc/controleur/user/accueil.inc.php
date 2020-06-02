@@ -1,20 +1,24 @@
 <?php
 /*======= C O N T R O L E U R ====================================================================================
-	fichier				: ./mvc/controleur/film/accueil.inc.php
+	fichier				: ./mvc/controleur/user/accueil.inc.php
 	auteur				: Loris Fariello
-	date de création	: octobre 2019
+	date de création	: mais2020
 	date de modification:
-	rôle				: le contrôleur de la page d'accueil des films
+	rôle				: le contrôleur de la page d'accueil user
   ================================================================================================================*/
 
 /**
- * Classe relative au contrôleur de la page accueil du domaine film
+ * Classe relative au contrôleur de la page accueil du domaine user
  * @author Loris Fariello
  * @version 1.0
- * @copyright Loris Fariello - octobre 2019
+ * @copyright Loris Fariello - mai 2020
  */
 class controleurUserAccueil extends controleur {
-	    
+	public function __construct(){
+		$this->modele = new modeleUserAuthentification();
+	}
+
+	
 	/**
 	 * Met à jour le tableau $donnees de la classe mère avec les informations spécifiques de la page
 	 * @param null
@@ -35,21 +39,17 @@ class controleurUserAccueil extends controleur {
 		// ===============================================================================================================
 		// encarts
 		// ===============================================================================================================
-// 		$this->encartsDroite = "partenaires.txt";
+		// $this->encartsDroite = "partenaires.txt";
  		//$this->encartsGauche = "partenaireEmpire.txt";
 		//$this->encartsGauche = "partenaires.txt";
 
 		$this->encartsDroite = parent::getEncart(2);
-				
-		// ===============================================================================================================
-		// texte défilant
-		// ===============================================================================================================
-		// rien
-		
-		// ===============================================================================================================
-		// alimentation des données COMMUNES à toutes les pages
-		// ===============================================================================================================
+
+		$this->user = $this->getInfo();
+
 		parent::setDonnees();
+
+		
 	}
 	
 	/**
@@ -63,6 +63,13 @@ class controleurUserAccueil extends controleur {
 	
 	public function defaut() {
 		parent::genererVue();
+	}
+
+	public function getInfo()
+	{
+		if (isset($_POST["login"]) && isset($_POST["password"])) {
+			return $this->modele->getInformationsUser($_POST["login"], $_POST["password"]);
+		}
 	}
 	
 } // class
