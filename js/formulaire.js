@@ -31,6 +31,8 @@ function verifierAuthentificationUser() {
     login = loginHash;
     mdp = mdpHash;
     
+    // alert(mdp);
+    
     return true;
     
 }

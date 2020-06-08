@@ -36,7 +36,6 @@
 	    
 	}
 }
-// test
 // ===============================================================================================================
 // la fonction spl_autoload_register permet d'exécuter automatiquement la fonction passée en paramètre (ici la fonction "chargerClasse")
 // dès qu'on essaie d'instancier une classe si le fichier qui la défini n'a pas été inclus.

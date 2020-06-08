@@ -18,7 +18,7 @@
 			?>
 			<script type='text/javascript'>
 			// -----BEGIN PUBLIC KEY-----									
-				var publicKeyRsa = "MCwwDQYJKoZIhvcNAQEBBQADGwAwGAIRANQSV0QfeHuhjPe9gPRSeE0CAwEAAQ==";
+				var publicKeyRsa = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALjDC3tqISRmbHmgE6gJki+vssIEWoLNWJEw+4E0AvQOaWoWiif3S9SgiMIFUinVEhlD1B6lg/tVIJfy/JyKB6kCAwEAAQ==";
 			// -----END PUBLIC KEY-----
 			</script>
 

@@ -46,7 +46,7 @@ class controleurFilmAccueil extends controleur {
  		//$this->encartsGauche = "partenaireEmpire.txt";
 		//$this->encartsGauche = "partenaires.txt";
 
-		$this->encartsDroite = parent::getEncart(2);
+		$this->encartsDroite = parent::getEncart(1);
 				
 		// ===============================================================================================================
 		// texte défilant

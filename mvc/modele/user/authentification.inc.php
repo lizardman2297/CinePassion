@@ -18,7 +18,6 @@ class modeleUserAuthentification extends modeleUser{
     * booléen false lorsqu'il n'y a plus de tuples à lire)
     */
     public function getInformationsUser($loginUser, $motDePasseUser){
-        $mdpCrypt = $this->encrypte($motDePasseUser);
 
         $reqLogin = "SELECT COUNT(loginUser) AS nb FROM user where loginUser = '$loginUser'";
         $pdo = $this->executerRequete($reqLogin);
@@ -27,9 +26,10 @@ class modeleUserAuthentification extends modeleUser{
             $reqMdp = "SELECT motDePasseUser FROM user WHERE loginUser = '$loginUser'";
             $pdoMdp = $this->executerRequete($reqMdp);
             $resultMdp = $pdoMdp->fetchObject()->motDePasseUser;
-            if ($mdpCrypt == $resultMdp) {
-                // $user = new stdClass();
-                $user->mdp = $mdpCrypt;
+            $mdpDecrypte = $this->decrypteString($resultMdp);
+
+            if ($mdpDecrypte == $motDePasseUser) {
+                $user->mdp = $resultMdp;
                 $user->login = $loginUser;
             }else {
                 return false;
