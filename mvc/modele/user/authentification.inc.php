@@ -23,22 +23,26 @@ class modeleUserAuthentification extends modeleUser{
         $pdo = $this->executerRequete($reqLogin);
 
         if ($pdo->fetchObject()->nb == 1) {
-            $reqMdp = "SELECT motDePasseUser FROM user WHERE loginUser = '$loginUser'";
-            $pdoMdp = $this->executerRequete($reqMdp);
-            $resultMdp = $pdoMdp->fetchObject()->motDePasseUser;
-            $mdpDecrypte = $this->decrypteString($resultMdp);
+            
+            // $mdpDecrypte = $this->decrypteString($resultMdp);
 
-            if ($mdpDecrypte == $motDePasseUser) {
-                $user->mdp = $resultMdp;
+            $testMdp = $this->connexion($motDePasseUser, $loginUser);
+
+            if ($testMdp) {
+                $reqMdp = "SELECT motDePasseUser FROM user WHERE loginUser = '$loginUser'";
+                $pdoMdp = $this->executerRequete($reqMdp);
+                $resultMdp = $pdoMdp->fetchObject()->motDePasseUser;
+
+                $user = new stdClass();
                 $user->login = $loginUser;
-            }else {
-                return false;
+                $user->motDePasse = $resultMdp;
             }
+
+
         }else {
             return false;
         }
-        var_dump($user);
-        return $user;
+        $_SESSION["compte"] = $loginUser;
     }
     
     /**
@@ -75,6 +79,11 @@ class modeleUserAuthentification extends modeleUser{
         $date = date('Y-n-d h:i:s');
         $reqDateConnexion = "UPDATE user SET dateHeureDerniereConnexionUser = $date";
         $dateConnexion = $this->executerRequete($reqDateConnexion);
+    }
+
+    public function deco()
+    {
+        $this->deconnexion();
     }
 
 

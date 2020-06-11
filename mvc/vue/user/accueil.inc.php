@@ -11,9 +11,7 @@
 </div><!-- content1 -->
 <div id="content2">
     <div id="textUser">
-    <?php
-        var_dump($user);
-    ?>
+
         Ce site propose certaines fonctionnalités qui ne sont accessibles qu'aux personnes ayant un compte. 3 niveaux de compte sont proposés.
         <h3>Le compte visiteur</h3> 
         Le compte visiteur est accessible à tout le monde. La création d'un compte s'effectue très facilement à partir du <a href="./index.php?module=user&page=inscription" class="info">formulaire d'inscription</a>. Une fois inscrites, 

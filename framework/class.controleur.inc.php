@@ -257,7 +257,7 @@ abstract class controleur {
 	 */
 	private function getAuthentification() {
 		if (isset($_SESSION["compte"])) {
-			echo "oui";
+			return fs::getContenuFichier("./formulaire/user.info.inc.php");
 		}else {
 			return fs::getContenuFichier("./formulaire/form.authentification.inc.php");
 		}

@@ -69,6 +69,33 @@ abstract class modele {
 		return $resultat;
 	}
 
+	public function connexion(string $mdp, $login)
+	{
+		$req = "SELECT SHA2('$mdp', 512) AS crypto";
+		$reqBdd = "SELECT motDePasseUser AS mdp FROM user WHERE loginUser = '$login'";
+
+		$pdoBdd = self::executerRequete($reqBdd);
+
+		$mdpBdd = $pdoBdd->fetchObject();
+
+		$pdo = self::executerRequete($req);
+		$testMdp = $pdo->fetchObject();
+
+
+		if ($testMdp->crypto == $mdpBdd->mdp) {
+			$user = true;
+		}else {
+			$user = false;
+		}
+
+		return $user;
+	}
+
+	public function deconnexion()
+	{
+		session_destroy();
+	}
+
 } // class
 
 ?>

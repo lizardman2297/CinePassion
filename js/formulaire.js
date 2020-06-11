@@ -28,8 +28,8 @@ function verifierAuthentificationUser() {
     var loginHash = jse.encrypt(login);
     var mdpHash = jse.encrypt(mdp);
     
-    login = loginHash;
-    mdp = mdpHash;
+    // login = loginHash;
+    // mdp = mdpHash;
     
     // alert(mdp);
     
